@@ -18,10 +18,6 @@ def part_two(filename)
   nos = File.readlines(filename).map(&:to_i)
   count = 0
   nos.each_with_index do |n, i|
-    # next if nos[0, 3].include? n
-    # current = [nos[i-2], nos[i-1], n].sum
-    # prev = [nos[i-3], nos[i-2], nos[i-1]].sum
-    # count+= 1 if current > prev
     break if i+3 > nos.size
     current = nos[i, 3].sum
     further = nos[i+1, 3].sum
